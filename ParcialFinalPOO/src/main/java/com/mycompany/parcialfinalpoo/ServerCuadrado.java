@@ -5,7 +5,7 @@ import java.net.Socket;
 import java.net.ServerSocket;
 
 
-public class ParcialFinalPOO {
+public class ServerCuadrado {
 
     public static void main(String[] args) {
         try {
@@ -15,7 +15,7 @@ public class ParcialFinalPOO {
             while(true){
                 Socket socketCliente = serverSocket.accept();
                 System.out.println("CLiente conectado desde: " + socketCliente.getInetAddress());
-                new Thread(new ManejorClientes(socketCliente)).start();
+                new Thread(new ManejadorClientes(socketCliente)).start();
             }
         } catch (IOException e) {
             System.out.println("Error en el servidor: " + e.getMessage());
